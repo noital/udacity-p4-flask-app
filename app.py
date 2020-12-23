@@ -1,6 +1,7 @@
+import logging
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
-import logging
+
 
 import pandas as pd
 from sklearn.externals import joblib
@@ -12,7 +13,7 @@ LOG.setLevel(logging.INFO)
 
 def scale(payload):
     """Scales Payload"""
-    
+
     LOG.info(f"Scaling Payload: \n{payload}")
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
@@ -20,13 +21,12 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = f"<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 @app.route("/predict", methods=['POST'])
 def predict():
     """Performs an sklearn prediction
-        
         input looks like:
         {
         "CHAS":{
@@ -47,12 +47,9 @@ def predict():
         "LSTAT":{
         "0":4.98
         }
-        
         result looks like:
         { "prediction": [ <val> ] }
-        
         """
-    
     # Logging the input payload
     json_payload = request.json
     LOG.info(f"JSON payload: \n{json_payload}")
