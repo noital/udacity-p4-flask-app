@@ -1,1 +1,6 @@
-<paste log output from Kubernetes-mediated prediction, here>
+deployment.apps/flask-app created
+NAME                         READY   STATUS    RESTARTS   AGE
+flask-app-7d67f6c6b9-99dtq   1/1     Running   0          37s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
