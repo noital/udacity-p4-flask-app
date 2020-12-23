@@ -1,6 +1,15 @@
+$ ./run_kubernetes.sh                                                                                                                           
 deployment.apps/flask-app created
 NAME                         READY   STATUS    RESTARTS   AGE
-flask-app-7d67f6c6b9-99dtq   1/1     Running   0          37s
+flask-app-7d67f6c6b9-vltdb   1/1     Running   0          4s
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
 Handling connection for 8000
+
+$ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
