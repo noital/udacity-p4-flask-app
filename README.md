@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![Noital](https://circleci.com/gh/noital/udacity-p4-flask-app.svg?style=svg)](https://app.circleci.com/pipelines/github/noital/udacity-p4-flask-app)
+
 
 ## Project Overview
 
