@@ -10,4 +10,4 @@ docker build --tag flask-app:1.0 .
 docker images list
 # Step 3: 
 # Run flask app
-docker run --publish 80:8000 flask-app:1.0 
+docker run --publish 8000:80 flask-app:1.0 
